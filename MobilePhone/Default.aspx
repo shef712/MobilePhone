@@ -24,13 +24,13 @@
                 text-decoration: none;
                 color: white;
                 display: inline-block;
-                height: 200px;
+                height: 170px;
                 width: 200px;
                 text-align: center;
             }
 
                 .item a.Key div:nth-child(1) {
-                    padding-top: 20px;
+                    padding-top: 35px;
                     font-size: 36px;
                 }
 
