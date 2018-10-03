@@ -14,7 +14,7 @@
             font-weight: bold;
         }
 
-            .container #Textbox1 {
+            .container #Input {
                 width: 600px;
                 height: 40px;
                 border: 5px solid tomato;
@@ -61,42 +61,13 @@
                 text-align: center;
                 padding-top: 20px;
                 font-size: 32px;
-                font-weight:bold;
+                font-weight: bold;
             }
 
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            border-bottom: 1px dotted black;
-        }
-
-            .tooltip .tooltiptext {
-                visibility: hidden;
-                width: 400px;
+            .item .label {
                 background-color: black;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 5px 0;
-                position: absolute;
-                z-index: 1;
-                bottom: 100%;
-                left: 18%;
-            }
-
-                .tooltip .tooltiptext::after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    margin-left: -5px;
-                    border-width: 5px;
-                    border-style: solid;
-                    border-color: black transparent transparent transparent;
-                }
-
-            .tooltip:hover .tooltiptext {
-                visibility: visible;
+                padding: 10px 30px;
+                border-radius: 10px;
             }
     </style>
 </head>
@@ -113,13 +84,13 @@
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Two" CssClass="Key" CommandArgument="2" CommandName="a,b,c" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Two" CssClass="Key" CommandArgument="2" OnClick="Keypad_Click">
                             <div>2</div>
                             <div>abc</div>
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Three" CssClass="Key" CommandArgument="3" CommandName="d,e,f" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Three" CssClass="Key" CommandArgument="3" OnClick="Keypad_Click">
                             <div>3</div>
                             <div>def</div>
                         </asp:LinkButton>
@@ -127,19 +98,19 @@
                 </div>
                 <div class="container">
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Four" CssClass="Key" CommandArgument="4" CommandName="g,h,i" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Four" CssClass="Key" CommandArgument="4" OnClick="Keypad_Click">
                             <div>4</div>
                             <div>ghi</div>
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Five" CssClass="Key" CommandArgument="5" CommandName="j,k,l" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Five" CssClass="Key" CommandArgument="5" OnClick="Keypad_Click">
                             <div>5</div>
                             <div>jkl</div>
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Six" CssClass="Key" CommandArgument="6" CommandName="m,n,o" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Six" CssClass="Key" CommandArgument="6" OnClick="Keypad_Click">
                             <div>6</div>
                             <div>mno</div>
                         </asp:LinkButton>
@@ -147,19 +118,19 @@
                 </div>
                 <div class="container">
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Seven" CssClass="Key" CommandArgument="7" CommandName="p,q,r,s" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Seven" CssClass="Key" CommandArgument="7" OnClick="Keypad_Click">
                             <div>7</div>
                             <div>pqrs</div>
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Eight" CssClass="Key" CommandArgument="8" CommandName="t,u,v" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Eight" CssClass="Key" CommandArgument="8" OnClick="Keypad_Click">
                             <div>8</div>
                             <div>tuv</div>
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Nine" CssClass="Key" CommandArgument="9" CommandName="w,x,y,z" OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Nine" CssClass="Key" CommandArgument="9" OnClick="Keypad_Click">
                             <div>9</div>
                             <div>xyz</div>
                         </asp:LinkButton>
@@ -172,7 +143,7 @@
                         </asp:LinkButton>
                     </div>
                     <div class="item">
-                        <asp:LinkButton runat="server" ID="Zero" CssClass="Key" CommandArgument="0" CommandName=" " OnClick="Keypad_Click">
+                        <asp:LinkButton runat="server" ID="Zero" CssClass="Key" CommandArgument="11" OnClick="Keypad_Click">
                             <div>0</div>
                             <div>SPACE</div>
                         </asp:LinkButton>
@@ -184,15 +155,19 @@
                     </div>
                 </div>
                 <div class="container">
-                    <asp:TextBox runat="server" ID="Textbox1"></asp:TextBox>
+                    <asp:TextBox runat="server" ID="Input"></asp:TextBox>
                 </div>
                 <div class="container">
                     <div class="item">
-                        <div class="tooltip">
-                            <asp:LinkButton runat="server" ID="Calculate" OnClick="Calculate_Click">
+                        <asp:LinkButton runat="server" ID="Calculate" OnClick="Calculate_Click">
                                 <div>CALCULATE</div>
-                            </asp:LinkButton>
-                            <span class="tooltiptext">Enter to calculate minimum time required for above input string and sequence of keys associated!</span>
+                        </asp:LinkButton>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="item">
+                        <div class="label">
+                            <asp:Label runat="server" ID="Stats" Text="Calculate the minimum time required for the input string and sequence of keys associated."></asp:Label>
                         </div>
                     </div>
                 </div>

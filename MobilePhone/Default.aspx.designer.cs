@@ -148,13 +148,13 @@ namespace MobilePhone {
         protected global::System.Web.UI.WebControls.LinkButton Hash;
         
         /// <summary>
-        /// Textbox1 control.
+        /// Input control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox1;
+        protected global::System.Web.UI.WebControls.TextBox Input;
         
         /// <summary>
         /// Calculate control.
@@ -164,5 +164,14 @@ namespace MobilePhone {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Calculate;
+        
+        /// <summary>
+        /// Stats control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Stats;
     }
 }
